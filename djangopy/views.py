@@ -11,10 +11,8 @@ def dashboard(request):
         total_buyer = Buyer.objects.count()
         total_oder = Order.objects.count()
         orders = Order.objects.all().order_by('-id')
-    
     except:
-  
-    
+        
     context = {
         'product': total_product,
         'supplier': total_supplier,
