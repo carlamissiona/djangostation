@@ -17,6 +17,8 @@ from django.contrib import admin
 from django.urls import include, path
 
 
+from .views import dashboard
+
 urlpatterns = [
     path('', include('app.urls')),
     path('', dashboard, name='dashboard'),
