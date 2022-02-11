@@ -5,11 +5,16 @@ from store.models import Product, Supplier, Buyer, Order
 
 @login_required(login_url='login')
 def dashboard(request):
-    total_product = Product.objects.count()
-    total_supplier = Supplier.objects.count()
-    total_buyer = Buyer.objects.count()
-    total_oder = Order.objects.count()
-    orders = Order.objects.all().order_by('-id')
+    try:
+        total_product = Product.objects.count()
+        total_supplier = Supplier.objects.count()
+        total_buyer = Buyer.objects.count()
+        total_oder = Order.objects.count()
+        orders = Order.objects.all().order_by('-id')
+    
+    except:
+  
+    
     context = {
         'product': total_product,
         'supplier': total_supplier,
